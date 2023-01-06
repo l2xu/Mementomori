@@ -58,6 +58,10 @@ function displayWeeks(totalWeeks, dateOfBirth, name) {
     circle.style.width = sizeOfOneCircle - puffer + "px";
     circle.style.margin = marginOfOneCircle / 2 - puffer + "px";
 
+    if (color == "black") {
+      circle.style.backgroundColor = "#3b3b3b";
+    }
+
     if (i < weeks) {
       if (color == "black") {
         circle.style.backgroundColor = "white";
