@@ -5,6 +5,19 @@ const params = new URLSearchParams(currentUrl.search);
 const birthdate = params.get("birthdate");
 const name = params.get("name");
 const lifespan = params.get("lifespan");
+const nameElement = document.getElementById("name");
+nameElement.innerHTML = name;
+
+const color = params.get("color");
+
+const body = document.getElementById("body");
+const circle = document.getElementsByClassName("circle");
+
+if (color == "black") {
+  body.style.color = "white";
+}
+
+// body.style.backgroundColor = "transparent";
 
 const myDate = new Date(birthdate.split(".").reverse().join("-"));
 
@@ -46,12 +59,13 @@ function displayWeeks(totalWeeks, dateOfBirth, name) {
     circle.style.margin = marginOfOneCircle / 2 - puffer + "px";
 
     if (i < weeks) {
-      circle.style.backgroundColor = "black";
+      if (color == "black") {
+        circle.style.backgroundColor = "white";
+      } else {
+        circle.style.backgroundColor = "black";
+      }
     }
 
     container.appendChild(circle);
   }
-
-  const nameElement = document.getElementById("name");
-  nameElement.innerHTML = name;
 }
