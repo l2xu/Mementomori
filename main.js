@@ -14,7 +14,7 @@ const body = document.getElementById("body");
 const circle = document.getElementsByClassName("circle");
 
 if (color == "black") {
-  body.style.color = "white";
+  body.style.color = "#D4D4D4";
 }
 
 // body.style.backgroundColor = "transparent";
