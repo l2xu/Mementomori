@@ -3,10 +3,11 @@ const currentUrl = new URL(window.location.href);
 const params = new URLSearchParams(currentUrl.search);
 
 const birthdate = params.get("birthdate");
-const name = params.get("name");
 const lifespan = params.get("lifespan");
 const nameElement = document.getElementById("name");
-nameElement.innerHTML = name;
+const totalWeeks = document.getElementById("totalWeeks");
+totalWeeks.innerHTML = lifespan * 52;
+nameElement.innerHTML = params.get("name");
 
 const color = params.get("color");
 
